@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>ArtTemplate Demo</title>
+
+    <style>
+        .list-wrap li .line {
+            position: absolute;
+            top: 51px;
+            left: 0;
+            width: 7px;
+            height: 101px;
+            background: #000;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/style-index.css">
+</head>
+<body>
+<div class="header"></div>
+<div class="container">
+    <div class="list-wrap">
+
+    </div>
+</div>
+
+<!-- build:js ./js/libs.js -->
+<script src="./js/libs/flex.js"></script>
+<!-- endbuild -->
+
+<!-- template:js -->
+<!-- endinject -->
+
+<script>
+//    var data = {
+//        name: "aaaa",
+//        list: [{itemid:2,title:'aaa'},{itemid:2,title:'bbb'}]
+//    };
+    var data = {
+        list : [
+            {
+                "id": "15",
+                "category_id": "3",
+                "title_lg": "唇妆潮流NO.1<br />周末游乐园×电光3D唇",
+                "title_sm": "只需唇中一点晕染，3D效果立显，即刻打造饱满电光唇",
+                "name": "",
+                "link": "",
+                "star_count": 1147,
+                "sort": "1",
+                "created_at": "2017-06-27 19:19:12",
+                "image": {
+                    "file_type": "1",
+                    "file_image": "img/a.jpeg",
+                    "file_link": "",
+                    "file_sort": "1"
+                }
+            },
+            {
+                "id": "17",
+                "category_id": "3",
+                "title_lg": "唇妆潮流NO.2  <br /> 海岛度假×电光对撞唇",
+                "title_sm": "哑光红唇与电光玫红的双重对撞，让你一次拥有多重妆效",
+                "name": "",
+                "link": "",
+                "star_count": 798,
+                "sort": "2",
+                "created_at": "2017-06-27 19:40:32",
+                "image": {
+                    "file_type": "1",
+                    "file_image": "img/b.png",
+                    "file_link": "",
+                    "file_sort": "1"
+                }
+            },
+            {
+                "id": "18",
+                "category_id": "3",
+                "title_lg": "唇妆潮流NO.3  <br /> 夏日音乐节×电光花瓣唇",
+                "title_sm": "质地到唇色的多重渐变，展现缤纷色彩，打造今夏超IN唇妆",
+                "name": "",
+                "link": "",
+                "star_count": 515,
+                "sort": "3",
+                "created_at": "2017-06-27 19:41:03",
+                "image": {
+                    "file_type": "1",
+                    "file_image": "img/c.png",
+                    "file_link": "",
+                    "file_sort": "1"
+                }
+            }
+        ]
+    }
+
+    var html = template('list', data);
+    document.getElementsByClassName('list-wrap')[0].innerHTML = html;
+    var header = template('header', {title:"ArtTemplate Demo"});
+    document.getElementsByClassName('header')[0].innerHTML = header;
+</script>
+</body>
+</html>

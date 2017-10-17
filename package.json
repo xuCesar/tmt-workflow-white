@@ -1,0 +1,71 @@
+{
+  "name": "tmt-workflow",
+  "version": "1.1.1",
+  "dependencies": {
+    "autoprefixer": "^6.3.3",
+    "browser-sync": "^2.13.0",
+    "crypto-md5": "^1.0.0",
+    "del": "^2.2.0",
+    "gulp": "git://github.com/gulpjs/gulp#4.0",
+    "gulp-art-include": "^0.2.1",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-ejs": "^2.1.1",
+    "gulp-ftp": "^1.1.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-lazyimagecss": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-postcss": "^6.0.1",
+    "gulp-posthtml": "^1.5.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-rev-all": "^0.8.22",
+    "gulp-rev-delete-original": "^0.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sftp": "^0.1.5",
+    "gulp-tmtsprite": "^0.0.22",
+    "gulp-uglify": "^1.5.3",
+    "gulp-usemin2": "^0.2.4",
+    "gulp-util": "^3.0.7",
+    "gulp-webp": "^2.3.0",
+    "gulp-zip": "^3.2.0",
+    "imagemin-pngquant": "^4.2.2",
+    "lodash": "^4.5.1",
+    "object-assign": "^4.1.1",
+    "postcss-pxtorem": "^3.3.1",
+    "posthtml-px2rem": "^0.0.3",
+    "rc": "^1.1.6",
+    "rd": "^0.0.2",
+    "tmt-ejs-helper": "^0.0.1"
+  },
+  "description": "A f2e project workflow based on Gulp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weixin/tmt-workflow"
+  },
+  "keywords": [
+    "Workflow",
+    "F2E",
+    "Less",
+    "Sass",
+    "CSS",
+    "Tencent",
+    "Wechat",
+    "WeiXin",
+    "Sprite",
+    "WebP",
+    "REM"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weixin/tmt-workflow"
+  },
+  "homepage": "https://github.com/weixin/tmt-workflow",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "git://github.com/gulpjs/gulp.git#4.0",
+    "gulp-inject": "^4.2.0",
+    "gulp-tmod": "^2.0.3"
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>REM DEMO-d</title>
+
+    <link rel="stylesheet" href="./css/style-index.css">
+</head>
+<body>
+<div class="header-wrap">
+    <div class="logo">
+        <img src="./img/logo-mask.png" alt="">
+    </div>
+    <p class="title">REM DEMO</p>
+    <p class="subtitle">px to rem 转换</p>
+</div>
+<div class="container">
+    <div class="btn-wrap">
+        <div class="btn-wrap btn-wrap1">
+            <a href="#" class="btn">Color Button</a>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <div class="btn-wrap btn-wrap2">
+            <a href="#" class="btn">Color Button</a>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <div class="btn-wrap btn-wrap3">
+            <a href="#" class="btn">Color Button</a>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <div class="btn-wrap btn-wrap4">
+            <a href="#" class="btn">Color Button</a>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <div class="btn-wrap btn-wrap5">
+            <a href="#" class="btn">Color Button</a>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <div class="btn-wrap btn-wrap6">
+            <a href="#" class="btn">Color Button</a>
+        </div>
+    </div>
+
+    <div class="content-wrap">
+        <h5>开启 REM</h5>
+        <p>首先，编辑配置文件 .tmtworkflowrc 如下： <br/>
+            &nbsp;{ <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;"supportREM": true <br/>
+            &nbsp;}
+        </p>
+        <h5>配置 REM</h5>
+        <p>
+            &nbsp;"remConfig": { <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;"rootValue": 75,        // rem 转换基数 <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;"unitPrecision": 10,    // 小数点位数 <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;"prop_white_list": [],  // 转换白名单 <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;"minPixelValue": 2      // 忽略最小值 <br/>
+            &nbsp;},
+        </p>
+        <h5>流程详述</h5>
+        <p>
+            开启后，CSS 分为 外联样式 和 内联样式 两部分逻辑执行：<br/><br/>
+        </p>
+        <p>Less -> CSS 过程，由插件 postcssPxtorem 对 LESS 中的 px 进行单位转换</p>
+        <p>HTML/EJS -> HTML 过程，会使用插件 posthtmlPx2rem 对 HTML 中的内联样式进行单位转换</p>
+        <h5>其它注意点</h5>
+        <p><strong>1. 兼容 1px 问题</strong><br/><br/></p>
+        <p>考虑到 1px 转换为 rem 会有小数bug，工作流中会忽略 1px 的转换，最小转换数值为 2px。<br/><br/></p>
+        <p>参见：postcss-pxtorem option:minPixelValue</p>
+        <p>参见：posthtmlPx2rem option:minPixelValue<br/><br/></p>
+        <p><strong>2. 雪碧图兼容问题</strong><br/><br/></p>
+        <p>为避免雪碧图遇到小数计算 bug，设置雪碧图内各个元素之间的间隙为 4px，参见_tasks/TaskBuildDist.js<br/><br/></p>
+        <p><strong>3. 强制不使用 REM 的预留 hack</strong><br/><br/></p>
+        <p>如果希望某条 CSS样式不进行单位转换，可使用如下大小写敏感的 px 写法：</p>
+        <p>如：12PX 代理 12px，这样工作流中就会忽略这条 CSS 属性，不进行单位转换</p>
+    </div>
+</div>
+
+<!-- build:js ../js/libs.js  -->
+<script src="./js/libs/flex.js"></script>
+<!-- endbuild -->
+
+<!-- template:js -->
+<!-- endinject -->
+
+</body>
+</html>

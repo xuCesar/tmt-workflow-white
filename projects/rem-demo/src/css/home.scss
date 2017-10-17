@@ -1,0 +1,109 @@
+$wet : #34495E;
+$ame : #9B59B6;
+$river : #3498DB;
+$emerland : #2ECC71;
+$clouds : #ECF0F1;
+$concrete : #95A5A6;
+$red : #E74C3C;
+$carrot : #E67E22;
+$sun : #F1C40F;
+
+
+.container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 20px;
+}
+
+.header-wrap {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo {
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 60px;
+  color: $wet;
+}
+
+.subtitle {
+  font-size: 32px;
+  color: $concrete;
+}
+
+.btn-wrap {
+  padding: 5px 10px;
+  width: 200px;
+}
+
+
+.btn-wrap1 a {
+  background: $emerland;
+}
+
+.btn-wrap2 a {
+  background: $carrot;
+}
+
+
+.btn-wrap3 a {
+  background: $ame;
+}
+
+.btn-wrap4 a {
+  background: $red;
+}
+
+.btn-wrap5 a {
+  background: $river;
+}
+
+.btn-wrap6 a {
+  background: $sun;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 12px;
+  padding-top: 13px;
+
+  border: none;
+  border-radius: 6px;
+  background: #34495e;
+  color: white;
+  font-size: 16.5px;
+  text-decoration: none;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden;
+  //border-color: #c5c5c5;
+  //border-color: rgba(0,0,0,0.15) rgba(0,0,0,0.15) rgba(0,0,0,0.25);
+}
+
+.content-wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: $wet;
+}
+
+.content-wrap p {
+  text-align: left;
+}

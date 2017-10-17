@@ -1,0 +1,47 @@
+{
+  //ftp 配置
+  "ftp": {
+    "host": "192.168.0.1",
+    "port": "",
+    "user": "root",
+    "pass": "pass",
+    "remotePath": "/data/wwwroot/display/labs", //默认上传到根目录下，配置此属性可指定具体子目录
+    "includeHtml": true  //ftp 上传是否包含 html
+  },
+
+  //自动刷新
+  "livereload": {
+     "available": true,  //开启自动刷新
+     "port": 8080,
+     "startPath": "TmTIndex.html"  //启动时自动打开的路径
+   },
+
+   //插件功能
+   //路径相对于 tasks/plugins 目录
+  "plugins": {
+    "build_devAfter": ["TmTIndex"],  //dev 任务执行后自动执行
+    "build_distAfter": [],          //build 任务执行后自动执行
+    "ftpAfter": ["ftp"]        //ftp 任务执行后自动执行
+  },
+
+  "lazyDir": ["../slice"], //gulp-lazyImageCSS 寻找目录(https://github.com/weixin/gulp-lazyimagecss)
+
+  "supportWebp": false,  //编译使用 webp
+
+  "supportREM": true,   //REM转换
+
+  "remConfig": {
+    "rootValue": 75,
+    "unitPrecision": 10,
+    "prop_white_list": [],
+    "minPixelValue": 2
+  },
+
+  "reversion": false,     //新文件名功能
+
+  "tmod": true,          // art-template 模板预编译
+
+  "inlineCSS": true,
+
+  "delTmpJS": ["./dist/js/**/*", "!./dist/js/template.js", "!./dist/js/main.js", "!./dist/js/libs.js", "!./dist/js/build/*.js", "!./dist/js/template.*.js", "!./dist/js/main.*.js", "!./dist/js/libs.*.js"]
+}

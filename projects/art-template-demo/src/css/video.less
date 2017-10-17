@@ -1,0 +1,67 @@
+video {
+  /*width: 100%;*/
+}
+.video-cover {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+#video-wrapper {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+}
+
+#paper {
+  width: 640px;
+  height: 914px;
+  transform-origin: center;
+  transform: scale3d(1, 1, 1);
+}
+
+#paper.flying {
+  -webkit-animation-name: paper-fly-out;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#endtitle.flying {
+  -webkit-animation-name: paper-fly-in;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.video-cover img {
+  position: absolute;
+}
+
+@-webkit-keyframes paper-fly-out {
+  from {
+    transform: scale3d(1, 1, 1) rotateZ(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale3d(2.5, 2.5, 1) rotateZ(10deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes paper-fly-in {
+  from {
+    transform: translateY(-100px) scale3d(0, 0, 1) rotateZ(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px) scale3d(2, 2, 1) rotateZ(0deg);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,24 @@
+
+<ul>
+    {{each list as value i}}
+    <li data-item-id="{{value.itemid}}">
+        <span class="line"></span>
+        <div class="title singulier-regular">{{#value.title_lg}}</div>
+        <div class="subtitle singulier-light">{{value.title_sm}}</div>
+        {{if value.link}}
+        <div class="tobuy" data-link="{{value.link}}">一键购买</div>
+        {{/if}}
+        <div class="full-w asset-wrap swiper-container" id="swiper-{{i}}" >
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{value.image.file_image}}" alt="" />
+                </div>
+            </div>
+            <div class="btn-wrap singulier-regular clearfix">
+                <div class="btn-bg like"><i class="icon-like"></i><span>{{value.star_count}}</span></div>
+                <div class="btn-bg share"><span>分享照片</span></div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
