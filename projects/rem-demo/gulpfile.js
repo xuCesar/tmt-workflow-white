@@ -7,20 +7,20 @@ var deep = 4;
 run_tasks('_tasks');
 
 function run_tasks(tasks_path) {
-    // if (--deep < 0) {
-    //     throw new Error('something wrong in require tasks!');
-    //     return;
-    // }
+    if (--deep < 0) {
+        throw new Error('something wrong in require tasks!');
+        return;
+    }
 
-    // tasks_path = path.join('../', tasks_path);
+    tasks_path = path.join('../', tasks_path);
 
-    // if (fs.existsSync(tasks_path)) {
-    //     require(tasks_path)(gulp);
-    // } else {
-    //     run_tasks(tasks_path);
-    // }
+    if (fs.existsSync(tasks_path)) {
+        require(tasks_path)(gulp);
+    } else {
+        run_tasks(tasks_path);
+    }
     //tasks_path = path.join('E:/Tools/tmt-workflow/', tasks_path);
-    tasks_path = path.join('/Users/xuzheng/6e/tmt-workflow-white/', tasks_path);
+    // tasks_path = path.join('/Users/xuzheng/6e/tmt-workflow-white/', tasks_path);
     if (fs.existsSync(tasks_path)) {
         require(tasks_path)(gulp);
     } else {

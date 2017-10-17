@@ -8,7 +8,8 @@ var less = require('gulp-less');
 var sass = require('gulp-sass');
 var util = require('./lib/util');
 var uglify = require('gulp-uglify');
-var usemin = require('gulp-usemin2');
+// var usemin = require('gulp-usemin2');
+var useref = require('gulp-useref');
 var lazyImageCSS = require('gulp-lazyimagecss');  // 自动为图片样式添加 宽/高/background-size 属性
 var minifyCSS = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
@@ -221,7 +222,7 @@ module.exports = function (gulp, config) {
                     posthtmlPx2rem(remConfig)
                 ))
             )
-            .pipe(usemin({  //JS 合并压缩
+            .pipe(useref({  //JS 合并压缩
                 jsmin: uglify()
             }))
             .pipe(gulp.dest(paths.tmp.dir))
@@ -245,7 +246,7 @@ module.exports = function (gulp, config) {
                     posthtmlPx2rem(remConfig)
                 ))
             )
-            .pipe(usemin({  //JS 合并压缩
+            .pipe(useref({  //JS 合并压缩
                 jsmin: uglify()
             }))
             .pipe(gulp.dest(paths.tmp.html));
