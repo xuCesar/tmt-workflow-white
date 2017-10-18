@@ -1,19 +1,18 @@
 var path = require('path');
 var del = require('del');
 var ejs = require('gulp-ejs');
-// var path = require('path');
-var less = require('gulp-less');  // less
-var sass = require('gulp-sass');  // sass
+var less = require('gulp-less');                  // less
+var sass = require('gulp-sass');                  // sass
 var gulpif = require('gulp-if');
 var util = require('./lib/util');
 var ejshelper = require('tmt-ejs-helper');
-var tmodjs = require('gulp-tmod');          // art-template
-var inject = require('gulp-inject');        // 自动注入
-var bs = require('browser-sync').create();  // 自动刷新浏览器
+var tmodjs = require('gulp-tmod');                // art-template
+var inject = require('gulp-inject');              // 自动注入
+var bs = require('browser-sync').create();        // 自动刷新浏览器
 var lazyImageCSS = require('gulp-lazyimagecss');  // 自动为图片样式添加 宽/高/background-size 属性
-var postcss = require('gulp-postcss');   // CSS 预处理
-var postcssPxtorem = require('postcss-pxtorem'); // CSS 转换 `px` 为 `rem`
-var posthtml = require('gulp-posthtml');  // HTML 预处理
+var postcss = require('gulp-postcss');            // CSS 预处理
+var postcssPxtorem = require('postcss-pxtorem');  // CSS 转换 `px` 为 `rem`
+var posthtml = require('gulp-posthtml');          // HTML 预处理
 var posthtmlPx2rem = require('posthtml-px2rem');  // HTML 内联 CSS 转换 `px` 为 `rem`
 
 var paths = {
@@ -222,7 +221,7 @@ module.exports = function (gulp, config) {
             )
             .pipe(gulp.dest(paths.dev.html))
             .on('data', function (chunk) {
-                // console.log(chunk.contents.toString().trim());
+                console.log(chunk.contents.toString().trim());
             })
             .on('end', reloadHandler)
     }

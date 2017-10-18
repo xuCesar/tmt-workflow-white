@@ -8,25 +8,24 @@ var less = require('gulp-less');
 var sass = require('gulp-sass');
 var util = require('./lib/util');
 var uglify = require('gulp-uglify');
-// var usemin = require('gulp-usemin2');
 var useref = require('gulp-useref');
 var lazyImageCSS = require('gulp-lazyimagecss');  // 自动为图片样式添加 宽/高/background-size 属性
 var minifyCSS = require('gulp-cssnano');
-var imagemin = require('gulp-imagemin');
+var imagemin = require('gulp-imagemin');          // 压缩PNG，JPEG，GIF和SVG图像
 var pngquant = require('imagemin-pngquant');
-var tmtsprite = require('gulp-tmtsprite');   // 雪碧图合并
+var tmtsprite = require('gulp-tmtsprite');        // 雪碧图合并
 var ejshelper = require('tmt-ejs-helper');
-var tmodjs = require('gulp-tmod');           // art-template 预编译
-var inject = require('gulp-inject');         // 自动注入
-var postcss = require('gulp-postcss');  // CSS 预处理
-var postcssPxtorem = require('postcss-pxtorem'); // 转换 px 为 rem
+var tmodjs = require('gulp-tmod');                // art-template 预编译
+var inject = require('gulp-inject');              // 自动注入
+var postcss = require('gulp-postcss');            // CSS 预处理
+var postcssPxtorem = require('postcss-pxtorem');  // 转换 px 为 rem
 var postcssAutoprefixer = require('autoprefixer');
 var posthtml = require('gulp-posthtml');
 var posthtmlPx2rem = require('posthtml-px2rem');
 var RevAll = require('gulp-rev-all');   // reversion
 var revDel = require('gulp-rev-delete-original');
 var changed = require('./common/changed')();
-// var obfuscate = require('gulp-obfuscate');
+var cache = require('gulp-cache');
 
 var paths = {
     src: {
@@ -140,9 +139,12 @@ module.exports = function (gulp, config) {
     //图片压缩
     function imageminImg() {
         return gulp.src(paths.src.img)
-            .pipe(imagemin({
-                use: [pngquant()]
-            }))
+            .pipe(cache(imagemin({
+                //optimizationLevel: 5, // 默认：3  取值范围：0-7（优化等级）
+                //progressive: true,    // 无损压缩jpg图片
+                verbose: true,
+                use: [pngquant()]     //使用pngquant深度压缩png图片的imagemin插件
+            })))
             .pipe(gulp.dest(paths.tmp.img));
     }
 
